@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width" />
         <title>TeaCup Contact</title>
         <link rel="stylesheet" type="text/css" href="stylesheet/portfolio.css">
+        <script src="./js/index.js" async></script>
     </head>
 
     <!--Body-->
@@ -16,7 +17,7 @@
             <a class="active" href="#Home">Home</a>
             <a href="#About">Introduction</a>
             <a href="#GitHub">Private Repository</a>
-            <a href="#Contact">Getting in touch</a>
+            <a href="#Contact" onclick="formOpen()">Getting in touch</a>
         </div>
 
         <!--Breaks inserted to add space between navbar and the first heading-->
@@ -25,7 +26,7 @@
 
         <!--Background video-->
         <div id="Home">
-            <video autoplay muted id="Typing_Video">
+            <video autoplay muted loop id="Typing_Video">
                 <source src="images/video/Typing.mp4" type="video/mp4">
                 <!--Display message if video fails to run-->
                 Your browser does not support HTML5 video.
@@ -53,11 +54,12 @@
         <!--About section-->
         <div class="Row" id="About">
             <!--Left column-->
-            <div class="Column_2">
-                <a href="#"><img src="images/linkedinlogo.png" alt="Replace with your own image and description"></a>
-            </div>
-            <!--Right column-->
             <div class="Column_1">
+                <a href="https://www.linkedin.com/in/soma-laskay-3b57bb132/" target="_blank"><img src="images/linkedinLogo.png" class="logo" alt="LinkedIn Logo"></a>
+            </div>
+
+            <!-- Middle column -->
+            <div class="Column_2">
                 <h1>Bio</h1>
                 <p class="bio">
                     I am a software developer who loves to code! As a father of three, I enjoy time with my family and traveling. 
@@ -67,46 +69,75 @@
                     <br>I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
                 </p>
             </div>
+            
+            <!--Right column-->
+            <div class="Column_3">
+                <img src="./images/photo1.png" class="photo" alt="LinkedIn">
+            </div>
         </div>
 
         <!--GitHub section-->
         <div class="Row" id="GitHub">
             <!--Left column-->
             <div class="Column_1">
+                <a href="https://github.com/SomaLaskay/JavaScript-Projects" target="_blank"><img src="./images/githubLogo.png" class="logo" alt="GitHub Logo"></a>
+            </div>
+
+            <!-- Middle column -->
+            <div class="Column_2">
                 <h1>GitHub</h1>
                 <p class="repo-text">
                     You can view my coding projects on my GitHub profile here:
                     <br>
-                    <p class="center"><a href="https://github.com/somalaskay" target="_blank">My GitHub Repository</a></p>
+                    <p class="center"><a href="https://github.com/soma-laskay-3b57bb132" target="_blank">The Tech Academy Github</a></p>
                 </p>
             </div>
+
             <!--Right column-->
-            <div class="Column_2">
-                <a href="https://github.com/somalaskay" target="_blank"><img src="images/GitHub.png" alt="GitHub Logo"></a>
+            <div class="Column_3">
+                <a href="#" target="_blank">
+                <img src="images/photo2.png" class="photo" alt="GitHub"></a>
             </div>
         </div>
 
         <!--Contact section-->
         <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <a href="#"><img src="images/discordlogo.png" alt="Contact_Image"></a>
+            <!-- Left column-->
+            <div class="Column_1">
+                <a href="https://discord.gg/DDkXZuGt" target="_blank"><img src="images/discordLogo.png" class="logo" alt="Discord"></a>
             </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
-                </form>
+
+            <!-- Middle column -->
+            <div class="Column_2">
+                
 				
             </div>
+
+            <!-- Right column-->
+            <div class="Column_3">
+                <img src="./images/photo3.png" class="photo" alt="Discord">
+            </div>
+
+        </div>
+        <!-- POPUP FORM -->
+        <div class="formContainer" id="formPanel">
+            <h1>Contact</h1>
+            <!--This specifies where and how to send the form data; we are leaving it blank-->
+            <form action="https://formspree.io/f/mayzqpzv" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+                <label>Name:</label>
+                <input type="text" placeholder="Please enter your name here">
+                <label>Email:</label>
+                <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                <label>Message:</label>
+                <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                <input type="submit" value="SUBMIT">
+                <input type="button" id="formCancelBtn" value="CANCEL" onclick="formClose()">
+            </form>    
+        </div>
+
+        <!-- FORM BUTTON -->
+        <div>
+            <button class="formBtn" id="formBtn" onclick="formOpen()">CONTACT</button>
         </div>
 
         <!--Footer section-->
